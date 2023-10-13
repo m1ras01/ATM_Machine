@@ -63,10 +63,35 @@ public class Account {
         double amount = input.nextDouble();
         if (amount<=checkingBalance){
             widthDrawCheckingBalance(amount);
-            System.out.println("You withdraw in checking card:"+moneyFormat.format(amount)+"  Current checking balance:"+moneyFormat.format(checkingBalance));
+            System.out.println("You withdraw in checking balance:"+moneyFormat.format(amount)+"  Current checking balance:"+moneyFormat.format(checkingBalance));
         }else{
             System.out.println("Your balance is not enough"+"\n");
         }
     }
+    public void getCheckingDeposit(){
+        System.out.println("Checking Account Balance: "+moneyFormat.format(checkingBalance));
+        System.out.println("Amount you want to deposit to CheckingAmount: ");
+        double amount = input.nextDouble();
+        depositToCheckingBalance(amount);
+        System.out.println("You deposit in your checking balance:"+moneyFormat.format(amount)+" Your Current checking balance:"+moneyFormat.format(checkingBalance));
+    }
 
+    public void getSavingWidthDraw(){
+        System.out.println("Your Saving Balance: "+ moneyFormat.format(savingBalance));
+        System.out.println("Amount you want to withdraw from Saving Balance:");
+        double amount = input.nextDouble();
+        if (amount<=savingBalance){
+            widthDrawCheckingBalance(amount);
+            System.out.println("You withdraw in saving balance:"+moneyFormat.format(amount)+" Your Current saving balance:"+moneyFormat.format(savingBalance));
+        }else{
+            System.out.println("Your balance is not enough"+"\n");
+        }
+    }
+    public void getSavingDeposit(){
+        System.out.println("Your Saving Balance: "+moneyFormat.format(checkingBalance));
+        System.out.println("Amount you want to deposit to CheckingAmoun: ");
+        double amount = input.nextDouble();
+        depositToCheckingBalance(amount);
+        System.out.println("You deposit in your checking balance:"+moneyFormat.format(amount)+" Your Current checking balance:"+moneyFormat.format(checkingBalance));
+    }
 }
